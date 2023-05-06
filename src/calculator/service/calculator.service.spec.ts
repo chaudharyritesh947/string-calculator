@@ -31,5 +31,9 @@ describe('CalculatorService', () => {
       expect(service.add('1,2')).toBe(3);
     });
    
+    it('should return the sum for any amount of numbers', () => {
+      expect(service.add('1,2,3,4,5')).toBe(15);
+    });
+
   });
 });
