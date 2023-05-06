@@ -12,7 +12,7 @@ export class CalculatorController {
     async authenticate(@Body() input: any): Promise<any> {
       try {
       
-       const processedOutput =  this.calculatorService.stringCalculator(input);
+       const processedOutput =  this.calculatorService.add(input);
       
         const responseDto: any = {
           status: 'success',
