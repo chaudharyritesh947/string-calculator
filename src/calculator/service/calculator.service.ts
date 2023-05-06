@@ -6,19 +6,28 @@ import { ICalculateService } from '../adaptor/service/ICalculateService';
 export class CalculatorService implements ICalculateService {
     public add(numbers: string): number {
       try{
-        if (numbers === '') {
+         if(numbers === '') {
             return 0;
           }
-      
+
+          //checking for valid input, need to be modified in case there will more constraints on valid i/p
           if(!this.validateInput(numbers)){
               throw new Error(`Invalid Input`);
           }
   
+          //Get the delimeter by checking the first few set of chars
           const delimiter = this.getDelimiter(numbers);
+
+          /*
+          processing the number in case of 
+          1. Custom delimeters
+          2. new lines
+          */
           const processedNumbers = this.getProcessedNumbers(numbers, delimiter);
           const parsed = processedNumbers.split(delimiter).map(Number);
           this.validateNegatives(parsed);
       
+          //Suming the resultant array of numbers
           const sum = parsed.reduce((digit, cur) => digit + cur, 0);
           return sum;  
       }
@@ -43,7 +52,6 @@ export class CalculatorService implements ICalculateService {
         try{
             const numbers = nums.replace(/\/\/.\n/, '');
             return numbers.replace(/\n/g, delimiter);
-        
         }
         catch(error){
             throw new Error(error);
