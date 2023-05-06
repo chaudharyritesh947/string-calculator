@@ -63,5 +63,11 @@ describe('CalculatorService', () => {
         'negatives not allowed: -2',
       );
     });
+
+    it('should throw exception when the input format is not correct', () => {
+      expect(() => service.add('1,\n')).toThrow(
+        'Invalid Input'
+      );
+    });
   });
 });
