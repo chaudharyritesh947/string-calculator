@@ -12,7 +12,8 @@ export class CalculatorController {
     async authenticate(@Body() input: any): Promise<any> {
       try {
       
-       const processedOutput =  this.calculatorService.add(input);
+       const inputString = input?.numbers;
+       const processedOutput =  this.calculatorService.add(inputString);
       
         const responseDto: any = {
           status: 'success',
