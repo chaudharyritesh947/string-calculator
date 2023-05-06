@@ -9,7 +9,7 @@ export class CalculatorController {
       ) {}
 
     @Post('/string')
-    async authenticate(@Body() input: any): Promise<any> {
+    async addString(@Body() input: any): Promise<any> {
       try {
       
        const inputString = input?.numbers;
