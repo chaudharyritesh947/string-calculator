@@ -9,17 +9,19 @@ export class CalculatorService implements ICalculateService {
           return 0;
         }
     
-
         const delimiter = Delimeter.COMMA;
-    
-        const parsed = numbers.split(delimiter).map(Number);
+        const processedNumbers = this.getProcessedNumbers(numbers, delimiter);
+        const parsed = processedNumbers.split(delimiter).map(Number);
         this.validateNegatives(parsed);
     
         const sum = parsed.reduce((digit, cur) => digit + cur, 0);
         return sum;  
     }
     
-    
+    private getProcessedNumbers(nums: string, delimiter: string){
+        return nums.replace(/\n/g, delimiter);
+    }
+
       private validateNegatives(numbers: number[]): void {
         const negatives = numbers.filter((n) => n < 0);
         if (negatives.length > 0) {

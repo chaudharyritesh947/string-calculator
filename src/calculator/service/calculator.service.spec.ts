@@ -35,5 +35,17 @@ describe('CalculatorService', () => {
       expect(service.add('1,2,3,4,5')).toBe(15);
     });
 
+    it('should allow new lines between numbers', () => {
+      expect(service.add('1\n2,3')).toBe(6);
+    });
+
+    it('should allow new lines between numbers', () => {
+      expect(service.add('\n1\n2,3')).toBe(6);
+    });
+
+    it('should allow new lines between numbers', () => {
+      expect(service.add('\n\n\n1\n2,3')).toBe(6);
+    });
+
   });
 });
