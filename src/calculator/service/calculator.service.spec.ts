@@ -47,5 +47,21 @@ describe('CalculatorService', () => {
       expect(service.add('\n\n\n1\n2,3')).toBe(6);
     });
 
+    it('should allow a custom delimiter', () => {
+      expect(service.add('//;\n1;2')).toBe(3);
+    });
+
+
+    it('should throw an error for negative numbers', () => {
+      expect(() => service.add('-1,-2,-3,-4')).toThrow(
+        'negatives not allowed: -1,-2,-3,-4',
+      );
+    });
+
+    it('should throw an error when there is presene of any negative numbers', () => {
+      expect(() => service.add('1,-2,3,4')).toThrow(
+        'negatives not allowed: -2',
+      );
+    });
   });
 });

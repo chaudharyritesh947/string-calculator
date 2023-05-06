@@ -9,7 +9,7 @@ export class CalculatorService implements ICalculateService {
           return 0;
         }
     
-        const delimiter = Delimeter.COMMA;
+        const delimiter = this.getDelimiter(numbers);
         const processedNumbers = this.getProcessedNumbers(numbers, delimiter);
         const parsed = processedNumbers.split(delimiter).map(Number);
         this.validateNegatives(parsed);
@@ -19,7 +19,8 @@ export class CalculatorService implements ICalculateService {
     }
     
     private getProcessedNumbers(nums: string, delimiter: string){
-        return nums.replace(/\n/g, delimiter);
+        const numbers = nums.replace(/\/\/.\n/, '');
+        return numbers.replace(/\n/g, delimiter);
     }
 
       private validateNegatives(numbers: number[]): void {
@@ -27,5 +28,12 @@ export class CalculatorService implements ICalculateService {
         if (negatives.length > 0) {
           throw new Error(`negatives not allowed: ${negatives.join(',')}`);
         }
+      }
+
+      private getDelimiter(numbers: string): string {
+        if (numbers.startsWith('//')) {
+          return numbers.charAt(2);
+        }
+        return ',';
       }
 }
