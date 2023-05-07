@@ -1,73 +1,46 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+Given below is a sample project which is developed in nest js
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Problem:
+Create a simple String calculator with a method signature:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+int Add(string numbers)
+The method can take up to two numbers, separated by commas, and will return their sum.
 
-## Description
+For example "" or "1" or "1,2" as inputs. (for an empty string it will return 0)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Hints:
 
-## Installation
+Start with the simplest test case of an empty string and move to one and two numbers
+Remember to solve things as simply as possible so that you force yourself to write tests you did not think about
+Remember to refactor after each passing test
+Allow the Add method to handle an unknown amount of numbers
 
-```bash
-$ npm install
-```
+Allow the Add method to handle new lines between numbers (instead of commas).
 
-## Running the app
+The following input is ok: "1\n2,3" (will equal 6)
+The following input is NOT ok: "1,\n" (not need to prove it - just clarifying)
+Support different delimiters
 
-```bash
-# development
-$ npm run start
+To change a delimiter, the beginning of the string will contain a separate line that looks like this: "//[delimiter]\n[numbers…]" for example "//;\n1;2" should return three where the default delimiter is ";"
+The first line is optional. all existing scenarios should still be supported
+Calling Add with a negative number will throw an exception "negatives not allowed" - and the negative that was passed.
 
-# watch mode
-$ npm run start:dev
+If there are multiple negatives, show all of them in the exception message.
 
-# production mode
-$ npm run start:prod
-```
+Problem link: https://blog.incubyte.co/blog/tdd-assessment/
 
-## Test
+How to run the app on server ?
 
-```bash
-# unit tests
-$ npm run test
+Step1: Make sure you have nest.js in your system
+Step2: Do a git clone for this repo by running the command git clone <url>
+Step3: Run npm install while being the repo folder.
+Step4: Run, npm run start
 
-# e2e tests
-$ npm run test:e2e
 
-# test coverage
-$ npm run test:cov
-```
+How to run Tests ?
 
-## Support
+Step1: Make sure you have nest.js in your system
+Step2: Do a git clone for this repo by running the command git clone <url>
+Step3: Run npm install while being the repo folder.
+Step4: Run, npm run test
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
