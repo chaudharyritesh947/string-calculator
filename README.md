@@ -30,8 +30,9 @@ Calling Add with a negative number will throw an exception "negatives not allowe
 If there are multiple negatives, show all of them in the exception message.
 
 Problem link: https://blog.incubyte.co/blog/tdd-assessment/
+
 <p>
-<b>How to run the app on server ?</b>
+<b>Setup</b>
 <ul>
  <li>
     Step1: Make sure you have nest.js in your system 
@@ -42,28 +43,22 @@ Problem link: https://blog.incubyte.co/blog/tdd-assessment/
  <li>
    Step3: Run npm install while being the repo folder.
  </li>
+</ul>
+</p>
+
+<p>
+<b>How to run the app on server ?</b>
+<ul>
  <li>
-    Step4: Run, npm run start
+    Run, npm run start
  </li>
 </ul>
-
-
-
 
 
 <b>How to run Tests ?</b>
 <ul>
  <li>
-   Step1: Make sure you have nest.js in your system
- </li>
- <li>
-  Step2: Do a git clone for this repo by running the command git clone <url>
- </li>
- <li>
-  Step3: Run npm install while being the repo folder.
- </li>
- <li>
-    Step4: Run, npm run test
+    Run, npm run test
   </li>
 </ul>
 
