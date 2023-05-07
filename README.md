@@ -28,19 +28,51 @@ Calling Add with a negative number will throw an exception "negatives not allowe
 If there are multiple negatives, show all of them in the exception message.
 
 Problem link: https://blog.incubyte.co/blog/tdd-assessment/
+<p>
+<b>How to run the app on server ?</b>
+<ul>
+ <li>
+    Step1: Make sure you have nest.js in your system 
+ </li>
+ <li>
+   Step2: Do a git clone for this repo by running the command git clone <url>
+ </li>
+ <li>
+   Step3: Run npm install while being the repo folder.
+ </li>
+ <li>
+    Step4: Run, npm run start
+ </li>
+</ul>
 
-How to run the app on server ?
-
-Step1: Make sure you have nest.js in your system
-Step2: Do a git clone for this repo by running the command git clone <url>
-Step3: Run npm install while being the repo folder.
-Step4: Run, npm run start
 
 
-How to run Tests ?
 
-Step1: Make sure you have nest.js in your system
-Step2: Do a git clone for this repo by running the command git clone <url>
-Step3: Run npm install while being the repo folder.
-Step4: Run, npm run test
 
+<b>How to run Tests ?</b>
+<ul>
+ <li>
+   Step1: Make sure you have nest.js in your system
+ </li>
+ <li>
+  Step2: Do a git clone for this repo by running the command git clone <url>
+ </li>
+ <li>
+  Step3: Run npm install while being the repo folder.
+ </li>
+ <li>
+    Step4: Run, npm run test
+  </li>
+</ul>
+
+
+
+
+<div>
+    <div> <b>Author</b>: <i>Ritesh Kumar</i> </div>
+    <div> <b>Contact</b>: <i>+91-9140300647</i> </div>
+    <div> <b>Email</b>: <i>chaudharyritesh947@gmail.com</i> </div>
+
+</div>
+
+</p>
